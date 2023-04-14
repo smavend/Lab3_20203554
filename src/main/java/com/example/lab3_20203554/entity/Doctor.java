@@ -20,6 +20,7 @@ public class Doctor {
     @Column(nullable = false)
     private String especialidad;
 
-    @Column(name="hospital_id",nullable = false)
-    private int hospitalId;
+    @ManyToOne
+    @JoinColumn(name="hospital_id",nullable = false)
+    private Hospital hospital;
 }

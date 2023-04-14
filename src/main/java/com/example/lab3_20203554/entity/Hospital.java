@@ -13,10 +13,13 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private int id;
+
     @Column(nullable = false)
     private String nombre;
+
     @Column(nullable = false)
     private String direccion;
+
     @Column(nullable = false)
     private String telefono;
 

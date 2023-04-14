@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -29,16 +29,18 @@ public class Paciente {
     private String diagnostico;
 
     @Column(name = "fecha_cita", nullable = false)
-    private Date fechaCita;
+    private Date fechaCita; //sql
 
     @Column(name = "numero_habitacion", nullable = false)
     private int numeroHabitacion;
 
-    @Column(name ="doctor_id",nullable = false)
-    private int doctorId;
+    @ManyToOne
+    @JoinColumn(name ="doctor_id",nullable = false)
+    private Doctor doctor;
 
-    @Column(name ="hospital_id",nullable = false)
-    private int hospitalId;
+    @ManyToOne
+    @JoinColumn(name ="hospital_id",nullable = false)
+    private Hospital hospital;
 
 
 }
